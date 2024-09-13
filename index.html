@@ -1,0 +1,509 @@
+<html>
+<head>
+    <title>Good%App</title>
+
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column; 
+   	    background-image: url('Walpaper3.jpg');
+   	    background-color: black;
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        #header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 30px 20px;
+        }
+        #logo {
+            width: 400px;
+            margin-left: 20px;
+            margin-top: 30px;
+        }
+        #menu {
+            margin-right: 30px;
+            margin-top: 30px;
+            position: relative;
+        }
+        #menu a {
+            text-decoration: none;
+        }
+        #menu button {
+            background-color: transparent;
+            color: white;
+            border: none;
+            margin-left: 10px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        #menu #dropdown-6 {
+            display: none;
+            position: absolute;
+            background-color: transparent;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            top: calc(100% + 5px);
+            left: 540px; 
+            width: 150px; 
+        }
+        #menu #dropdown-6 a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            margin: 5px 0;
+            border-radius: 3px;
+        }
+        #menu #dropdown-6 a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        #content {
+            flex-grow: 1;
+            display: flex;
+            justify-content: left;
+            flex-direction: column;
+	    margin-top: 60px;
+        }
+
+
+		
+
+	.titulo {
+	    margin-left: 80px;
+	    color: #b36200;
+        }
+
+
+
+        .container {
+            width: 90%;
+            margin: 20px auto;
+        }
+
+        .button-bar {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .filter-btn {
+            padding: 15px 25px;
+            margin: 5px;
+            cursor: pointer;
+            border: none;
+            background-color: transparent;
+            color: white;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .filter-btn:hover {
+            background-color: #331c00;
+        }
+
+        .product-catalog {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .product-item {
+            display: none; /* Ocultamos todos los productos inicialmente */
+            text-align: center;
+            background-color: black;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .product-item img {
+            max-width: 100%;
+            border-radius: 10px;
+            height: auto;
+        }
+
+        .product-item p {
+            margin: 10px 0 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .product-catalog {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-catalog {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        .main-content {
+            min-height: 100vh; /* Hace que el contenedor principal ocupe al menos el 100% de la altura de la ventana */
+            background-color: transparent /* Color de fondo principal */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+        }
+        .dl-banner {
+            font-family: Arial, sans-serif;
+            width: 100%;
+            border-top: 1px solid white; 
+	    margin-top: 125px;
+
+        }
+        .dl-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            background-color: #000;
+            color: #fff;
+            padding: 20px;
+            box-sizing: border-box; /* Asegura que el padding se incluya en el ancho total */
+        }
+        .dl-platforms {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-right: 20px;
+
+        }
+        .dl-platforms a {
+            margin-right: 15px;
+            margin-bottom: 15px;
+            display: block;
+        }
+        .dl-platforms img {
+            width: 170px;
+            cursor: pointer;
+            margin-left: 110px;
+        }
+        .dl-left-side {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+            flex-grow: 1;
+        }
+        .dl-left-side-text {
+	    text-align: justify;
+            margin-top: 10px;
+            margin-left: 50px;
+            margin-right: 100px;
+	    font-size: 13px;
+        }
+        .dl-right-side {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .dl-right-side a {
+            margin-bottom: 10px;
+        }
+        .dl-right-side img {
+            width: 50px;
+            margin-right: 15px;
+            cursor: pointer;
+            margin-right: 70px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="main-content">
+
+    <div id="header">
+        <a href="https://www.fromsoftware.jp/ww/"><img id="logo" src="FromSoftwareLogo.png" alt="Logo"></a>
+        <div id="menu">
+            <a href="file:///D:/IDEX%20CICLO%20V/Trabajos/APLICACIONES%20WEB/Ejercicios%20Paginas%20Web/Pagina%20Videogames%20Benjamin/1%20Main%20Manu.html"><button>Inicio</button></a>
+            <a href="https://www.darksouls.jp/"><button>Sitio Oficial</button></a>
+            <a href="https://www.darksouls.jp/news.html"><button>Noticias</button></a>
+            <a href="file:///D:/IDEX%20CICLO%20V/Trabajos/APLICACIONES%20WEB/Ejercicios%20Paginas%20Web/Pagina%20Videogames%20Benjamin/GoodsandApp%20Catalogo/GoodsAndApp.html"><button>GOODS&APP</button></a>
+            <a href="https://www.fromsoftware.jp/ww/faq.html"><button>Soporte</button></a>
+            <button id="dropdown-button">Descargar</button>
+            <div id="dropdown-6">
+                <a href="https://store.steampowered.com/app/570940/DARK_SOULS_REMASTERED/">DARK SOUL 1</a>
+                <a href="https://store.steampowered.com/app/335300/DARK_SOULS_II_Scholar_of_the_First_Sin/?l=spanish">DARK SOUL 2</a>
+                <a href="https://store.steampowered.com/app/374320/DARK_SOULS_III/?l=spanish">DARK SOUL 3</a>
+                <a href="https://store.steampowered.com/app/1245620/ELDEN_RING/">ELDEN RING</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="titulo">
+    	   <h1>GOODS&APP/Productos y Aplicaciones</h1>
+           <p>Trabajo del Ingeniero Willian</p>
+        </div>
+
+
+    <div class="container">
+        <div class="button-bar">
+            <button class="filter-btn" data-category="todos">Todo</button>
+            <button class="filter-btn" data-category="categoria1">Trending</button>
+            <button class="filter-btn" data-category="categoria2">Vestimenta</button>
+            <button class="filter-btn" data-category="categoria3">Libros</button>
+            <button class="filter-btn" data-category="categoria4">Aplicacion</button>
+        </div>
+
+        <div class="product-catalog">
+            <div class="product-item categoria1" onclick="location.href='#'">
+                <img src="101.jpg" alt="Producto 1">
+                <p>Hoguera (Iluminada) S/99.99</p>
+            </div>
+            <div class="product-item categoria1" onclick="location.href='#'">
+                <img src="102.jpg" alt="Producto 1">
+                <p>Bruja del Caos Clague S/354.99</p>
+            </div>
+            <div class="product-item categoria1" onclick="location.href='#'">
+                <img src="103.jpg" alt="Producto 1">
+                <p>Caballero Negro S/186.99</p>
+            </div>
+            <div class="product-item categoria1" onclick="location.href='#'">
+                <img src="104.jpg" alt="Producto 1">
+                <p>Oscar, Caballero de Astora S/153.99</p>
+            </div>
+            <div class="product-item categoria1" onclick="location.href='#'">
+                <img src="105.jpg" alt="Producto 1">
+                <p>Caballero Farnham S/164.32</p>
+            </div>
+            <div class="product-item categoria1" onclick="location.href='#'">
+                <img src="106.jpg" alt="Producto 1">
+                <p>Encarnación de Reyes S/163.30</p>
+            </div>
+            <div class="product-item categoria1" onclick="location.href='#'">
+                <img src="107.jpg" alt="Producto 1">
+                <p>Artorias el Caminante del Abismo S/250.00</p>
+            </div>
+            <div class="product-item categoria1" onclick="location.href='#'">
+                <img src="108.jpg" alt="Producto 1">
+                <p>Orstein Asesino de Dragones S/250.60</p>
+            </div>
+            <div class="product-item categoria1" onclick="location.href='#'">
+                <img src="109.jpg" alt="Producto 1">
+                <p>Mimico</p>
+            </div>
+            <div class="product-item categoria1" onclick="location.href='#'">
+                <img src="110.jpg" alt="Producto 1">
+                <p>El gran Lobo, Sif</p>
+            </div>
+            <div class="product-item categoria1" onclick="location.href='#'">
+                <img src="111.jpg" alt="Producto 1">
+                <p>Solaire, Caballero Solar</p>
+            </div>
+            <div class="product-item categoria1" onclick="location.href='#'">
+                <img src="112.jpg" alt="Producto 1">
+                <p>Siegmeyer de Catalina</p>
+            </div>
+            <div class="product-item categoria1" onclick="location.href='#'">
+                <img src="113.jpg" alt="Producto 1">
+                <p>Caballero Negro</p>
+            </div>
+            <div class="product-item categoria1" onclick="location.href='#'">
+                <img src="114.jpg" alt="Producto 1">
+                <p>Caballero Mayor</p>
+            </div>
+
+
+            <div class="product-item categoria2" onclick="location.href='#'">
+                <img src="201.jpg" alt="Producto 2">
+                <p>Anillo de Gato Plateado</p>
+            </div>
+            <div class="product-item categoria2" onclick="location.href='#'">
+                <img src="202.jpg" alt="Producto 2">
+                <p>Collar de Espada de Luna Oscura</p>
+            </div>
+            <div class="product-item categoria2" onclick="location.href='#'">
+                <img src="203.jpg" alt="Producto 2">
+                <p>Anillo de serpiente de PLata Codiciosa</p>
+            </div>
+            <div class="product-item categoria2" onclick="location.href='#'">
+                <img src="204.jpg" alt="Producto 2">
+                <p>Anillo de Lobo</p>
+            </div>
+            <div class="product-item categoria2" onclick="location.href='#'">
+                <img src="205.jpg" alt="Producto 2">
+                <p>Anillo de Flor Verde</p>
+            </div>
+            <div class="product-item categoria2" onclick="location.href='#'">
+                <img src="206.jpg" alt="Producto 2">
+                <p>Anillo Avispa</p>
+            </div>
+            <div class="product-item categoria2" onclick="location.href='#'">
+                <img src="207.jpg" alt="Producto 2">
+                <p>Camiseta con Estampado de Hojas Doradas</p>
+            </div>
+            <div class="product-item categoria2" onclick="location.href='#'">
+                <img src="208.jpg" alt="Producto 2">
+                <p>Torch BOFIRE LIT</p>
+            </div>
+            <div class="product-item categoria2" onclick="location.href='#'">
+                <img src="209.jpg" alt="Producto 2">
+                <p>Broken Warrior</p>
+            </div>
+            <div class="product-item categoria2" onclick="location.href='#'">
+                <img src="210.jpg" alt="Producto 2">
+                <p>Bolsa Tote con Estampado de Hoguera</p>
+            </div>
+            <div class="product-item categoria2" onclick="location.href='#'">
+                <img src="211.jpg" alt="Producto 2">
+                <p>Funda para IPhone</p>
+            </div>
+            <div class="product-item categoria2" onclick="location.href='#'">
+                <img src="212.jpg" alt="Producto 2">
+                <p>Funda para Android</p>
+            </div>
+            <div class="product-item categoria2" onclick="location.href='#'">
+                <img src="213.jpg" alt="Producto 2">
+                <p>Anillo de la Vida</p>
+            </div>
+            <div class="product-item categoria2" onclick="location.href='#'">
+                <img src="214.jpg" alt="Producto 2">
+                <p>Colgante de Yelmo de Catarina</p>
+            </div>
+            <div class="product-item categoria2" onclick="location.href='#'">
+                <img src="215.jpg" alt="Producto 2">
+                <p>Colgante de Personas con forma de Hongo</p>
+            </div>
+            <div class="product-item categoria2" onclick="location.href='#'">
+                <img src="216.jpg" alt="Producto 2">
+                <p>Camiseta con Estampado de Hogueras</p>
+            </div>	
+            <div class="product-item categoria2" onclick="location.href='#'">
+                <img src="217.jpg" alt="Producto 2">
+                <p>Camiseta con Estampado de Hogueras 8 bits</p>
+            </div>
+            <div class="product-item categoria2" onclick="location.href='#'">
+                <img src="218.jpg" alt="Producto 2">
+                <p>Camiseta Catarina Knight en problemas</p>
+            </div>
+
+
+            <div class="product-item categoria3" onclick="location.href='#'">
+                <img src="301.jpg" alt="Producto 3">
+                <p>Dark Souls con Artorias of the Abyss Edition La guía completa</p>
+            </div>
+            <div class="product-item categoria3" onclick="location.href='#'">
+                <img src="302.jpg" alt="Producto 3">
+                <p>Dark Souls II La guía completa</p>
+            </div>
+            <div class="product-item categoria3" onclick="location.href='#'">
+                <img src="303.jpg" alt="Producto 3">
+                <p>Guía completa oficial de Dark Souls III</p>
+            </div>
+            <div class="product-item categoria3" onclick="location.href='#'">
+                <img src="304.jpg" alt="Producto 3">
+                <p>Libro guía de Dark Souls II</p>
+            </div>
+            <div class="product-item categoria3" onclick="location.href='#'">
+                <img src="305.jpg" alt="Producto 3">
+                <p>DARK SOULS TRPG 02 EL SEÑOR DE LA CINDER CAÍDO</p>
+            </div>
+            <div class="product-item categoria3" onclick="location.href='#'">
+                <img src="306.jpg" alt="Producto 3">
+                <p>Guía oficial de Dark Souls</p>
+            </div>
+            <div class="product-item categoria3" onclick="location.href='#'">
+                <img src="307.jpg" alt="Producto 3">
+                <p>TRABAJOS DE DISEÑO DE DARK SOUL</p>
+            </div>
+            <div class="product-item categoria3" onclick="location.href='#'">
+                <img src="308.jpg" alt="Producto 3">
+                <p>TRABAJOS DE DISEÑO DE DARK SOUL II</p>
+            </div>
+            <div class="product-item categoria3" onclick="location.href='#'">
+                <img src="309.jpg" alt="Producto 3">
+                <p>TRABAJOS DE DISEÑO DE DARK SOUL III</p>
+            </div>
+            <div class="product-item categoria3" onclick="location.href='#'">
+                <img src="310.jpg" alt="Producto 3">
+                <p>Dark Souls III The Fire Phase Edition Guía completa oficial</p>
+            </div>
+            <div class="product-item categoria3" onclick="location.href='#'">
+                <img src="311.jpg" alt="Producto 3">
+                <p>DARK SOULS TRPG 03 LA ENLACE DEL FUEGO</p>
+            </div>
+            <div class="product-item categoria3" onclick="location.href='#'">
+                <img src="312.jpg" alt="Producto 3">
+                <p>TRILOGÍA DE ALMAS OSCURAS -Archivo del Fuego-</p>
+            </div>
+
+
+            <div class="product-item categoria4" onclick="location.href='#'">
+                <img src="401.png" alt="Producto 4">
+                <p>Cámara de DarkSoul</p>
+            </div>
+            <div class="product-item categoria4" onclick="location.href='#'">
+                <img src="402.png" alt="Producto 4">
+                <p>ALMAS OSCURAS III Tema Xperia™</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const filterButtons = document.querySelectorAll(".filter-btn");
+            const productItems = document.querySelectorAll(".product-item");
+
+            filterButtons.forEach(button => {
+                button.addEventListener("click", () => {
+                    const category = button.getAttribute("data-category");
+
+                    productItems.forEach(item => {
+                        if (category === "todos") {
+                            item.style.display = "block";
+                        } else {
+                            if (item.classList.contains(category)) {
+                                item.style.display = "block";
+                            } else {
+                                item.style.display = "none";
+                            }
+                        }
+                    });
+                });
+            });
+
+            // Mostrar todos los productos por defecto al cargar la página
+            filterButtons[0].click();
+        });
+    </script>
+
+        <div class="dl-banner">
+            <div class="dl-container">
+                <div class="dl-left-side">
+                    <div class="dl-platforms">
+                        <a href="https://www.xbox.com/es-MX/consoles/xbox-one-s"><img src="logo_one.png" alt="Descargar en XboxOne"></a>
+                        <a href="https://store.steampowered.com/?l=spanish"><img src="logo_steam.png" alt="Descargar en Steam"></a>
+                        <a href="https://www.playstation.com/es-pe/"><img src="logo_ps3.png" alt="Descargar en PlayStation Store 3"></a>
+                        <a href="https://www.playstation.com/es-pe/ps4/buy-ps4/"><img src="logo_ps4.png" alt="Descargar en PlayStation Store 4"></a>
+                    </div>
+                    <div class="dl-left-side-text">
+                        <h2>FROMSOFTWARE</h2>
+                        <p>"[2024]© Todos los derechos reservados. Xbox One y los logotipos relacionados son marcas registradas de Microsoft Corporation en los Estados Unidos y/o en otros países. Steam y el logotipo de Steam son marcas comerciales y/o marcas registradas de Valve Corporation en los EE.UU. y/o en otros países. 'PS3', 'PlayStation', 'PlayStation Family Mark', 'DualShock' y 'SIXAXIS' son marcas comerciales o marcas registradas de Sony Interactive Entertainment Inc. 'PS4', 'PlayStation', 'PlayStation Family Mark', 'DualShock' y 'SIXAXIS' son marcas comerciales o marcas registradas de Sony Interactive Entertainment Inc."</p>
+                    </div>
+                </div>
+                <div class="dl-right-side">
+                    <a href="https://www.facebook.com/fromsoftware.jp/"><img src="logo_facebook.png" alt="Facebook"></a>
+                    <a href="https://www.instagram.com/fromsoftware_jp/"><img src="logo_instagram.png" alt="Instagram"></a>
+                    <a href="https://x.com/fromsoftware_pr"><img src="logo_x.png" alt="X"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
